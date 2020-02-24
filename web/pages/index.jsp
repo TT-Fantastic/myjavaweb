@@ -25,7 +25,7 @@
       </thead>
       <tbody>
           <%
-              Class.forName("com.mysql.jdbc.Driver");
+             /* Class.forName("com.mysql.jdbc.Driver");
               String url="jdbc:mysql//localhost:3306/qwe?useUnicode=true&characterEncoding=utf8";
               String username="root";
               String password="123456";
@@ -41,8 +41,19 @@
               }
               rs.close();
               pstmt.close();
-              con.close();
+              con.close();*/
+             //request.getRequestDispatcher("indext.jsp").forward(request,response);
+             // response.sendRedirect("indext.jsp");
+              pageContext.setAttribute("key","pageContext");
+              request.setAttribute("key","request");
+              session.setAttribute("key","session");
+              application.setAttribute("key","application");
           %>
+          <%=pageContext.getAttribute("key")%><br>
+          <%=request.getAttribute("key")%><br>
+          <%=session.getAttribute("key")%><br>
+          <%=application.getAttribute("key")%><br>
+
       </tbody>
   </table>
 
